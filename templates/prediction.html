@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/prediction.css')}}">
+    <title>Prediction Page</title>
+</head>
+<body>
+    {% if prediction_text %}
+        <h2>{{prediction_text}}</h2>
+        <img src="data:image/jpeg;base64, {{img_data}}" alt="'Uploaded image"width="300">
+    {% endif %}
+</body>
+</html>
