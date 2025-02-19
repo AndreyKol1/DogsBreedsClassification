@@ -12,7 +12,7 @@ app = Flask(__name__, template_folder='templates', static_folder='static')
 model = models.efficientnet_b3(weights=None)  
 
 model.classifier[1] = torch.nn.Linear(in_features=1536, out_features=120)
-model.load_state_dict(torch.load("effnetb3.pt"))
+model.load_state_dict(torch.load("effnetb3.pt", map_location=torch.device("cpu")))
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
